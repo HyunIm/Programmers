@@ -1,9 +1,10 @@
-SET @hour := -1;
+SET @i := -1;
 
-SELECT (@hour := @hour + 1) AS HOUR, (
-        SELECT COUNT(*)
-        FROM ANIMAL_OUTS
-        WHERE @hour = HOUR(DATETIME)
-    ) AS COUNT
+SELECT (@i := @i + 1) AS 'HOUR', (
+    SELECT COUNT(*)
+    FROM ANIMAL_OUTS
+    WHERE @i = HOUR(DATETIME)
+    ) AS 'COUNT'
 FROM ANIMAL_OUTS
-WHERE @hour < 23;
+WHERE @i < 23
+;

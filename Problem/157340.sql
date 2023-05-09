@@ -1,7 +1,7 @@
 SELECT CAR_ID, 
     MAX(
         CASE
-            WHEN (START_DATE <= '2022-10-16'  AND '2022-10-16' <= END_DATE) THEN '대여중'
+            WHEN ('2022-10-16' BETWEEN START_DATE AND END_DATE) THEN '대여중'
             ELSE '대여 가능'
         END
     ) AS `AVAILABILITY`
